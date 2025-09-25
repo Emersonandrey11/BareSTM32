@@ -25,5 +25,5 @@ In order to toggle an GPIO Pin, in ARM Cortex M0 microcontroller we need to:
 2. Configure the needed registers
 3. Set the specifics bits
 
-### RCC - 
+### RCC - Register Clock Control
 
