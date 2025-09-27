@@ -1,9 +1,25 @@
 # Bare Metal Programming on a STM32F030K6 microcontroller board
 
-The main goal of this project is to create an embedded application from scratch which will serve for studying embedded programing and for future applications. The hardware is a basic microcontroller board which has only the necessary componentes to run it like:
+The main goal of this project is to create an ==embedded application from scratch== which will serve for ==studying embedded programing== and for ==future applications==. The hardware is a basic microcontroller board which has only the necessary componentes to run it like:
 
 - An LQFP32 STM32F030K6 microcontroller
-- Header pins to access the microcontroller board
+- Header pins to access the microcontroller pins
+- Reset button (connected directly to pin 4 - NRST)
+- Pull-up/down switch connected on BOOT0 (Pin 31)
+- User LED connected to PB1 (Pin 15)
+- SWD header pin
+
+We're gonna use it the SWD protocol and the GNU Arm toolchain to flash our code to the microcontroller. 
+
+## Serial wire debug - SWD Protocol
+
+Using J4 (SWD header pin) we're gonna be able to programming our microcontroller board which means writing coding in our text editor and blinking and LED.
+
+TODO: Detailed the SWD protocol
+
+## GNU Arm Toolchain - arm-none-eabi
+
+GNU Arm Toolchain is a set of tools used to compile, link, flash and degub code into hardware. Its a open-souce tool developed by its own community and it is one of the most toolchain used. This toolchain can de downloaded to [GNU Arm Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
 ## Coding
 
@@ -70,7 +86,7 @@ The information inside .rodata files are:
 
 #### .text files
 
-The information inside .data files are:
+The information inside .text files are:
 
 - Executable code
 
