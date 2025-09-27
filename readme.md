@@ -1,6 +1,9 @@
 # Bare Metal Programming on a STM32F030K6 microcontroller board
 
-The main goal of this project is to create an embedded application from scratch which will serve for studying embedded programing and for future applications. The hardware is a basic microcontroller board which has only the necessary componentes to run it.
+The main goal of this project is to create an embedded application from scratch which will serve for studying embedded programing and for future applications. The hardware is a basic microcontroller board which has only the necessary componentes to run it like:
+
+- An LQFP32 STM32F030K6 microcontroller
+- Header pins to access the microcontroller board
 
 ## Coding
 
@@ -27,7 +30,9 @@ In order to toggle an GPIO Pin, in ARM Cortex M0 microcontroller we need to:
 
 ### RCC - Register Clock Control
 
-### STM32 Linker File
+## STM32 Linker File
+
+### Linking
 
 An linker File (.ld) defines the memory layout for a specific microcontroller. A microcontroller memory includes sections like:
 
@@ -52,7 +57,28 @@ The information inside .bss files are:
 
 #### .data files
 
-The information inside 
+The information inside .data files are:
+
+- Initialized data
+
+#### .rodata files
+
+The information inside .rodata files are:
+
+- read-only data
+- vector-table
+
+#### .text files
+
+The information inside .data files are:
+
+- Executable code
+
+### Entry point
+
+The entry point defines the first instruction to be executed beeing usually:
+
+- Reset handler in the startup code
 
 
 
