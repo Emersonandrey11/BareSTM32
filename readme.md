@@ -27,3 +27,33 @@ In order to toggle an GPIO Pin, in ARM Cortex M0 microcontroller we need to:
 
 ### RCC - Register Clock Control
 
+### STM32 Linker File
+
+An linker File (.ld) defines the memory layout for a specific microcontroller. A microcontroller memory includes sections like:
+
+- FLASH (where the program and constant data stays)
+- RAM (where the variable data stays, also stack[^1] and heap)
+
+So it's the linkers file job to know the address for FLASH and RAM (and other peripherals).
+
+The linker file is used in the process of compiling and flashing a code into a microcontroller. In this process, the linker file maps these four differents files:
+
+- .bss
+- .data
+- .rodata
+- .text
+
+#### .bss files
+
+The information inside .bss files are:
+
+- Vector table 
+- Uninitialzied data
+
+#### .data files
+
+The information inside 
+
+
+
+[^1]: What is a stack? Besides been a memory location.
