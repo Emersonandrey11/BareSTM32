@@ -60,7 +60,7 @@ The compiler,
 
 arm-none-eabi-gcc
 
-´´´
+```
 
 first takes all .c files as an input and then outputs .i files. These .i files refers to a pre-processing file where all the directives (all the macros and stuff in .h files are check at this point) will be resolved. After that, from .i files, .s files are created.
 
