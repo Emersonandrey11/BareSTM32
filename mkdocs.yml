@@ -1,0 +1,12 @@
+site_name: Bare Metal on STM32
+site_description: Bare Metal programming tools for studying programming on STM32 microcontrollers
+site_author: Emerson C
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+theme: 
+  name: material
+
+
