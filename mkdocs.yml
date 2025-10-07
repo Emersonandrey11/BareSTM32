@@ -1,6 +1,8 @@
 site_name: Bare Metal on STM32
 site_description: Bare Metal programming tools for studying programming on STM32 microcontrollers
 site_author: Emerson C
+repo_url: https://github.com/Emersonandrey11?tab=repositories
+site_url: https://emersonandrey11.github.io/BareSTM32/
 
 nav:
   - Home: index.md
@@ -8,5 +10,31 @@ nav:
 
 theme: 
   name: material
+  font:
+    text: Merriweather Sans
+  palette: 
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: blue grey
+      accent: deep purple
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: green
+      accent: deep purple
+
+extra:
+  social:
+  - icon: simple/github
+    link: https://github.com/Emersonandrey11?tab=repositories
+  - icon: simple/facebook
+    link: https://www.linkedin.com/in/emerson-andrey-da-concei%C3%A7%C3%A3o-900633150/
+  
 
 
