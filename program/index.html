@@ -12,10 +12,8 @@
         <meta name="author" content="Emerson C">
       
       
-        <link rel="canonical" href="https://emersonandrey11.github.io/BareSTM32/about/">
+        <link rel="canonical" href="https://emersonandrey11.github.io/BareSTM32/program/">
       
-      
-        <link rel="prev" href="..">
       
       
       
@@ -24,7 +22,7 @@
     
     
       
-        <title>About - Bare Metal on STM32</title>
+        <title>This section explains how to program and debug code to a microcontroller - Bare Metal on STM32</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#author" class="md-skip">
+        <a href="#this-section-explains-how-to-program-and-debug-code-to-a-microcontroller" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              This section explains how to program and debug code to a microcontroller
             
           </span>
         </div>
@@ -277,32 +275,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    About
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -313,35 +289,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#salve" class="md-nav__link">
-    <span class="md-ellipsis">
-      Salve
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -373,11 +320,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#salve" class="md-nav__link">
+  <a href="#serial-wire-debug-swd-protocol" class="md-nav__link">
     <span class="md-ellipsis">
-      Salve
+      Serial wire debug - SWD Protocol
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnu-arm-toolchain-arm-none-eabi" class="md-nav__link">
+    <span class="md-ellipsis">
+      GNU Arm Toolchain - arm-none-eabi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-link-and-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile, Link and Build
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compile, Link and Build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assembler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entry point
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -400,13 +407,43 @@
   
 
 
-<h1 id="author">Author</h1>
-<p>Hi, my name is Emerson and you can contact me in these links:</p>
+<h1 id="this-section-explains-how-to-program-and-debug-code-to-a-microcontroller">This section explains how to program and debug code to a microcontroller</h1>
+<h2 id="serial-wire-debug-swd-protocol">Serial wire debug - SWD Protocol</h2>
+<p>Using J4 (SWD header pin) we're gonna be able to programming our microcontroller board which means writing coding in our text editor and blinking and LED.</p>
+<p>TODO: Detailed the SWD protocol</p>
+<h2 id="gnu-arm-toolchain-arm-none-eabi">GNU Arm Toolchain - arm-none-eabi</h2>
+<p>GNU Arm Toolchain is a set of tools used to compile, link, flash and degub code into hardware. Its a open-souce tool developed by its own community and it is one of the most toolchain used. This toolchain can de downloaded to <a href="https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads">GNU Arm Toolchain</a></p>
+<h2 id="compile-link-and-build">Compile, Link and Build</h2>
+<h3 id="compile">Compile</h3>
+<p>The compiler, </p>
+<pre><code class="language-C">
+arm-none-eabi-gcc
+
+</code></pre>
+<p>first takes all .c files as an input and then outputs .i files. These .i files refers to a pre-processing file where all the directives (all the macros and stuff in .h files are check at this point) will be resolved. After that, from .i files, .s files are created.</p>
+<p>These files are responsable for convert the higher level language to mnemonics (assembly instructions). The mnemonics depends on microcontroler architeture.</p>
+<h3 id="assembler">Assembler</h3>
+<p>In assemble stage, .s files are converted to .o files (relocatable object file - The instructions (opcodes) dont carries address only instructions). The .o files contains all the opcodes (which are symbols for instructions). After that, comes the linking stage.</p>
+<h3 id="linking">Linking</h3>
+<p>An linker File (.ld) defines the memory layout for a specific microcontroller. A microcontroller memory includes sections like:</p>
 <ul>
-<li><a href="https://www.linkedin.com/in/emerson-andrey-da-concei%C3%A7%C3%A3o-900633150/">Linkedin</a></li>
-<li><a href="https://github.com/Emersonandrey11?tab=repositories">Github</a></li>
+<li>FLASH (where the program and constant data stays)</li>
+<li>RAM (where the variable data stays, also stack[^1] and heap)</li>
 </ul>
-<h3 id="salve">Salve</h3>
+<p>So its the linkers file job to know the address for FLASH and RAM (and other peripherals).</p>
+<p>The linker file is used in the process of compiling and flashing a code into a microcontroller. In this process, the linker file maps these four differents files:</p>
+<ul>
+<li>.bss (contains vector table and uninitialized data)</li>
+<li>.data (initialized data)</li>
+<li>.rodata (read-only data and vector table)</li>
+<li>.text (executable code)</li>
+</ul>
+<h3 id="entry-point">Entry point</h3>
+<p>The entry point defines the first instruction to be executed beeing usually:</p>
+<ul>
+<li>Reset handler in the startup code</li>
+</ul>
+<p>[^1]: What is a stack? Besides been a memory location.</p>
 
 
 
