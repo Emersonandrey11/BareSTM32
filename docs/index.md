@@ -2,6 +2,17 @@
 
 This tutorial is for those who want to learn how microcontrollers work and how to actually program them.
 
+<p align="center">
+  <em>
+    Check out the documentation –
+    <a
+      href="https://emersonandrey11.github.io/BareSTM32/"
+    >Bare metal STM32</a>.
+  </em>
+</p>
+
+For a faster overview...
+
 ## Motivation
 
 There are a lot of tutorials on the internet about programming microcontrollers, but it seems to me that one can only truly learn by doing it yourself. So, this tutorial is for myself...
