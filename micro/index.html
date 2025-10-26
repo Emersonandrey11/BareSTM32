@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#understanding-our-microcontroller" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -349,6 +354,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    STM32F030
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -361,6 +381,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      System architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sram-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      SRAM section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peripherals-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peripherals section
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -405,6 +489,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      System architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sram-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      SRAM section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peripherals-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peripherals section
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -423,9 +562,31 @@
   
 
 
-  <h1>STM32F030</h1>
-
-
+<h1 id="understanding-our-microcontroller">Understanding our microcontroller</h1>
+<p>This page dives into the reference manual of STM32F030K6 and explains all the important information within the <a href="https://www.st.com/resource/en/reference_manual/dm00091010-stm32f030x4x6x8xc-and-stm32f070x6xb-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a>.</p>
+<h2 id="system-architecture">System architecture</h2>
+<p>In the figure below we can observe the system architecture. </p>
+<p><img alt="System architecture" src="../imgs/system.png" /></p>
+<p>As shown in the figure, the CPU access all the peripherals like ADC and SPI for example, via the APB bus which is connected to AHB1 bus. These busses are the clock connections between CPU and peripherals. So in order to read an ADC value, for example, first you need to activate the clock of ADC peripherals. If you don't activate, the CPU can't read the sampled values. You also need to configure the periphals register.</p>
+<h2 id="memory-mapping">Memory mapping</h2>
+<p>In the figure below we can observe the memory mapping. </p>
+<p><img alt="Memory mapping" src="../imgs/memory.png" /></p>
+<h2 id="code-section">Code section</h2>
+<p>The code section in memory starts at address <code>0x0000 0000</code> and ends at address <code>0x2000 0000</code>. This sections includes memory address of Flash memory, system memory and bootconfiguration.</p>
+<ul>
+<li>From address <code>0x0000 0000</code> to <code>0x0004 0000</code> we have flash, system memory or SRAM.</li>
+<li>From address <code>0x0800 0000</code> to <code>0x0804 0000</code> we have the flash memory section</li>
+</ul>
+<h2 id="sram-section">SRAM section</h2>
+<ul>
+<li>From address <code>0x2000 0000</code> to <code>0x4000 0000</code> we have the SRAM section</li>
+</ul>
+<h2 id="peripherals-section">Peripherals section</h2>
+<ul>
+<li>From address <code>0x4000 0000</code> to <code>0x4000 8000</code> we have the memory section of APB registers. All the peripherals (ADCs, timers etc.) which are connected to APB registers can be configured simply by writing values inside these memory block. Information about the registers can be found into the <a href="#apb-registers">APB Registers section</a>.</li>
+</ul>
+<h1 id="apb-registers">APB Registers</h1>
+<p>dslçkdçsld</p>
 
 
 
