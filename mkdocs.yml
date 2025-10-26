@@ -7,6 +7,10 @@ site_url: https://emersonandrey11.github.io/BareSTM32/
 nav:
   - Home: index.md
   - About: about.md
+  - Hardware: hardware.md
+  - Toolchain: program.md
+  - STM32F030: micro.md
+  - Code: code.md
 
 theme: 
   name: material

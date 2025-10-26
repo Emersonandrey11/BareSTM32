@@ -1,4 +1,4 @@
-# Hardware
+# Hardware design 
 
 The hardware is a basic microcontroller board which has only the necessary componentes to run it like:
 
