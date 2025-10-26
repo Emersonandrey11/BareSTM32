@@ -1,17 +1,5 @@
 # Bare Metal programming on STM32 Microcontrollers
 
-This tutorial is for those who want to learn how microcontrollers work and how to actually program them.
-
-<p align="center">
-  <em>
-    Check out the documentation –
-    <a
-      href="https://emersonandrey11.github.io/BareSTM32/"
-    >Bare metal STM32</a>.
-  </em>
-</p>
-
-For a faster overview...
 
 ## Motivation
 
